@@ -1,40 +1,34 @@
-# productivy_app
+# [Productivy](https://github.com/productivy/productivy)
+!!! by Hana, Indira, Fathul
 
-by fathul
+# API Documentation
 
-#JSON-CRUD API Documentation
-[Productivy](https://github.com/productivy/productivy)
-
----
 ## Overview
 This documentation covers the Task Management Service web API.
 
 ---
 #### Media Type support
-All server response bodies and request bodies MUST be valid JSON Media Type messages.
+    All server response bodies and request bodies MUST be valid JSON Media Type messages.
 
----
 ## URLs and Operations
 ---
 Below are the URLs and the operations associated with them.
----
-Main Route in Heroku
 
----
+
 #### User
 The User URL (/api/users/) is the base URL for creating, reading, updating, deleting User objects and supports the following operations:
 
 ---
-###### Authentication
----
+##### Authentication
+
 | Route | HTTP | Description | Input | Output |
 | ------ | ------ | ------ | ------ | ------ |
 | ````/api/signup```` | POST | Sign up with new user info | [username], [password], [email], [role] | User List
 | ````/api/signin```` | POST | Sign in while get an access token based on credentials | [username], [password] | User List
 
 ---
-###### CRUD User
----
+##### CRUD User
+
 | Route | HTTP | Description | Input | Output |
 | ------ | ------ | ------ | ------ | ------ |
 | ````/api/users```` | GET | Get all the users info (admin only) | none | User List
@@ -45,8 +39,7 @@ The User URL (/api/users/) is the base URL for creating, reading, updating, dele
 
 User List is shown below
 
-###### User List
----
+#### User List
 ````
 {
   "user" : [
