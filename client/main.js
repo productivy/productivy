@@ -59,3 +59,10 @@ if(tokenjwt) {
     $('.g-signin2').show()
     $('#logbtn').hide()
 }
+
+$.ajax({
+    type: "get",
+    url: "http://localhost:3000/activity",
+})
+.done((activity)=>{activity})
+.fail((err)=>{err})
