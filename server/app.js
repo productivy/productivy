@@ -9,7 +9,7 @@ const indexRouter = require('./routes/index'),
     app = express();
 
 mongoose.connect('mongodb://localhost:27017/productivy');
-
+// ok
 app
   .use(express.json())
   .use(express.urlencoded({ extended: false }))
