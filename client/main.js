@@ -50,3 +50,12 @@ alertify.defaults = {
     }
 }
 
+
+let tokenjwt = localStorage.getItem('tokenjwt')
+if(tokenjwt) {
+    $('.g-signin2').hide()
+    $('#logbtn').show()
+} else {
+    $('.g-signin2').show()
+    $('#logbtn').hide()
+}

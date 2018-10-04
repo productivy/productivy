@@ -11,6 +11,8 @@ function onSignIn(googleUser) {
     .done(function(data) {
         if (data.token) {
             localStorage.setItem('tokenjwt', data.token)
+            $('.g-signin2').hide()
+            $('#logbtn').show()
         }
     })
     .fail(err => {

@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 const jwt = require('jsonwebtoken'),
-      User = require('../models/users');
+      User = require('../models/users')
 
 
 module.exports = {
