@@ -13,12 +13,31 @@
   </head>
   <body>
 
-      <div class="g-signin2" style="display: inline-flex;" data-width="40" data-height="40" data-longtitle="true" data-onsuccess="onSignIn"></div>
+      <div class="g-signin2" style="display: inline-flex;" data-height="40" data-onsuccess="onSignIn"></div>
       <button id="logbtn" style="display: inline-flex;" class="waves-effect waves-light btn" type="button" onclick="signOut()">Log Out</button>
+      <div id="movie"></div>
+
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.11.1/build/alertify.min.js"></script>
     <script src="main.js"></script>
     <script src="login.js"></script>
+    <script>
+
+      $(document).ready( function() {
+        $.ajax({
+          method: 'GET',
+          url: 'http://localhost:3000/anim'
+        })
+          .done(film => {
+            console.log(film)
+            $('#movie').empty()
+            $('#movie').append(`<p>${film.data.title}</p>`)
+          })
+          .fail(err => {
+            console.log(err);
+          })
+      })
+    </script>
   </body>
 </html>
