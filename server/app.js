@@ -8,7 +8,8 @@ const indexRouter = require('./routes/index'),
     // usersRouter = require('./routes/users'),
     app = express();
 
-mongoose.connect('mongodb://localhost:27017/productivy');
+// mongoose.connect('mongodb://localhost:27017/productivy');
+mongoose.connect('mongodb://productivy1:productivy1@ds119503.mlab.com:19503/productivy')
 
 app
   .use(express.json())
