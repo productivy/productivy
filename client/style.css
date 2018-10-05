@@ -40,3 +40,117 @@ body {
 input.search {
     margin-bottom: 10px;
 }
+
+/* Sections */
+
+/* .g-signin2, #logbtn {
+    margin-left: 20%;
+} */
+
+a[m-open="one"] {
+    height:60px !important;
+    width: 60px;
+    margin-left:20%;
+    margin-top: 100px;
+}
+  
+a[m-open="two"] {
+    width:60px !important;
+    height:60px !important;
+    margin-left:20%;
+    margin-top: 400px;
+}
+  
+a[m-open="three"] {
+    margin-left:20%;
+    margin-top: 100px;
+}
+
+/* Title */
+
+.font-title {
+    margin-left: 40%;
+    line-height: 2.5em;
+    width: 50%;
+    height: 120px;
+    text-align: right;
+    transform: perspective(1000px) translateZ(1px);
+    transform-origin: 0% 0%;
+    transition: all 1s cubic-bezier(0.06, 0.63, 0, 1);
+    backface-visibility: hidden;
+}
+.title-big {
+    font-size: 4em;
+    text-decoration: underline;
+}
+
+.small {
+    font-size: 1.4em!important;
+}
+
+/* Anim */
+
+.anime-box {
+    border-radius: 3px;
+    position: relative;
+    margin: 8% auto auto auto;
+    width: 450px;
+    padding: 40px 50px;
+    display: table;
+    background-color: #fff;
+}
+.anime-box .anime-text {
+    text-align: center;
+    width: 450px;
+    height: auto;
+    clear: both;
+    font-weight: 500;
+    font-size: 1.75em;
+}
+.anime-box .anime-text i {
+    font-size: 1.0em;
+    margin-right: 0.4em;
+}
+.anime-box .anime-director {
+    width: 450px;
+    height: auto;
+    clear: both;
+    padding-top: 20px;
+    font-size: 1em;
+    text-align: right;
+}
+.anime-box .buttons {
+    width: 450px;
+    margin: auto;
+    display: block;
+}
+.anime-box .buttons .button#new-anime {
+    height: 38px;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    background-color: tomato;
+    outline: none;
+    /* font-size: 0.85em; */
+    padding: 8px 18px 6px 18px;
+    /* margin-top: 30px; */
+    opacity: 1;
+    cursor: pointer;
+}
+.anime-box .buttons .button:hover {
+    opacity: 0.9;
+}
+.anime-box .buttons .fa-star {
+    float: left;
+    text-align: center;
+    font-size: 2em;
+    margin-right: 5px;
+    width: 40px;
+}
+.anime-box .buttons .button#new-anime {
+    float: right;
+}
+
+.anime-box .anime-desc {
+    margin-bottom: 35px;
+}

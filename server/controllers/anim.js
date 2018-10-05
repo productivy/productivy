@@ -11,7 +11,7 @@ class Controller {
             }
         })
             .then(data => {
-              console.log(data);
+            //   console.log(data);
               let films = data.data
 
               let randomIndex = Math.round(Math.random() * (films.length - 1))
@@ -22,7 +22,7 @@ class Controller {
 
             })
             .catch(error => {
-              console.log(error);
+            //   console.log(error);
               res.status(500).json({
                   message: error
               })
