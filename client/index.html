@@ -5,21 +5,22 @@
     <title></title>
     <base href="/">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.11.1/build/css/alertify.min.css"/>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="18229040173-c8cnia2v4jseslvf2j3j7m6vj8v2vbvk.apps.googleusercontent.com">
-
+    <base href="/">
   </head>
   <body class="yellow">
   
-    <a class="btn  red m-open" m-open="one"></a>
+    <a class="btn red m-open" m-open="one"></a>
    
-    <a class="btn-floating btn-large  blue m-open" m-open="two"></a>
+    <a class="btn-floating btn-large blue m-open" m-open="two"></a>
    
-    <a class="btn  green m-open" m-open="three"></a>
+    <a class="btn green m-open" m-open="three"></a>
     
     <div class='font-title'>
       <p class="small">Hey you,</p>
@@ -58,16 +59,26 @@
     <div class="m-modal" m-modal="two">
       <div class="m-close">X</div>
       <div class="m-body">
-        <div id="activity"></div>
-        <form class="searchbox" method="get" action="https://www.google.com/search">
-        <input type="text" name="q" size="31" value="">
+        <div class="activityBox">
+          <div id="activity"></div>
+        </div>
+        <button class="button" id="new-activity">Random</button>
+        <form id="content" method="get" action="https://www.google.com/search" target="_blank">
+          <input class="input" type="text" name="q" value="">
+          <button type="reset" class="search"></button>
         </form>
       </div>
     </div>
    
     <div class="m-modal" m-modal="three">
       <div class="m-close">X</div>
-      <div class="m-body">Three</div>
+      <div class="m-body">
+          <div class="wrapper">
+              <div class="card radius shadowDepth1">
+              </div>
+              <button class="button" id="new-book">New Book</button>
+            </div>
+      </div>
     </div>
 
     
@@ -79,83 +90,194 @@
 
       let animeTitle, animeDesc, animeDir, animeStar
         function getAnim() {
-        $.ajax({
-          method: 'GET',
-          url: 'http://localhost:3000/anim'
-        })
-          .done(film => {
-            console.log(film)
-            animeTitle = film.data.title
-            animeDesc = film.data.description
-            animeDir = film.data.director
-            animeStar = film.data.rt_score
+          $.ajax({
+            method: 'GET',
+            url: 'http://localhost:3000/anim',
+            headers: {
+              tokenjwt: localStorage.getItem('tokenjwt')
+            }
+          })
+            .done(film => {
+              console.log(film)
+              animeTitle = film.data.title
+              animeDesc = film.data.description
+              animeDir = film.data.director
+              animeStar = film.data.rt_score
 
-            console.log(animeTitle)
-            console.log(animeDesc)
-            console.log(animeDir)
-            console.log(animeStar)
-            $(".anime-text").animate({
-              opacity: 0
-            }, 500,
-            function() {
-              $(this).animate({
-                opacity: 1
-              }, 500);
-              $('#text').text(animeTitle);
-            });
-            $(".anime-desc").animate({
-              opacity: 0
-            }, 500,
-            function() {
-              $(this).animate({
-                opacity: 1
-              }, 500);
-              $('#desc').text(animeDesc);
-            });
-            $(".buttons").animate({
-              opacity: 0
-            }, 500,
-            function() {
-              $(this).animate({
-                opacity: 1
-              }, 500);
-              $('#star span').empty().append(animeStar);
-            });
+              $(".anime-text").animate({
+                opacity: 0
+              }, 500,
+              function() {
+                $(this).animate({
+                  opacity: 1
+                }, 500);
+                $('#text').text(animeTitle);
+              });
+              $(".anime-desc").animate({
+                opacity: 0
+              }, 500,
+              function() {
+                $(this).animate({
+                  opacity: 1
+                }, 500);
+                $('#desc').text(animeDesc);
+              });
+              $(".buttons").animate({
+                opacity: 0
+              }, 500,
+              function() {
+                $(this).animate({
+                  opacity: 1
+                }, 500);
+                $('#star span').empty().append(animeStar);
+              });
 
-            $(".anime-director").animate({
-              opacity: 0
-            }, 500,
-            function() {
-              $(this).animate({
-                opacity: 1
-              }, 500);
-              $('#director').html(animeDir);
+              $(".anime-director").animate({
+                opacity: 0
+              }, 500,
+              function() {
+                $(this).animate({
+                  opacity: 1
+                }, 500);
+                $('#director').html(animeDir);
+              })
             })
-          })
-          .fail(err => {
-            console.log(err);
-          })
-          
+            .fail(err => {
+              console.log(err);
+            })  
         }
 
-      $(document).ready( function() {
-        $(".m-open").modalF()
+        function getBook() {
+          $.ajax({
+            type: "get",
+            url: "http://localhost:3000/books",
+            headers: {
+              tokenjwt: localStorage.getItem('tokenjwt')
+            }
+          })
+          .done((book)=>{
 
-        getAnim()
-        $('#new-anime').on('click', getAnim);
+            let title, desc, author
+            if (book.book.title) {
+              title = book.book.title
+            } else {
+              title = 'Untitled'
+            }
+            if (book.book.description) {
+              desc = book.book.description
+            } else {
+              desc = 'No description'
+            }
+            if (book.book.authors) {
+              if (book.book.authors.length > 1) {
+                author = book.book.authors.join(', ')
+              } else {
+                author = book.book.authors
+              }
+            } else {
+              author = 'Anonymous'
+            }
+
+            $('.card').empty().append(`
+                <div class="card__image border-tlr-radius">
+                  <img src="${book.book.imageLinks}" height="300px" alt="image" class="border-tlr-radius">
+                </div>
+      
+                <div class="card__content card__padding">
+      
+                  <article class="card__article">
+                    <h3><a href="${book.book.previewLink}">${title}</a></h3>
+      
+                    <p>${desc.substring(0, 300)}...</p>
+                  </article>
+                </div>
+      
+                <div class="card__action">
+                  
+                <div class="card__author">
+                  <div class="card__author-content">
+                    By <a href="#">${author}</a>
+                  </div>
+                </div>
+                `)
+          })
+          .fail((err)=>{err})
+        }
         
+      function getRandom() {
         $.ajax({
           type: "get",
           url: "http://localhost:3000/activity",
+          headers: {
+            tokenjwt: localStorage.getItem('tokenjwt')
+          }
         })
         .done((activity)=>{
-          $('#activity').empty()
-          $('#activity').append(`
-          <p>${activity.activity}</p>
-          <p>${activity.type}</p>`)
-          console.log(activity)
+          $('#activity').empty().append(`
+          <h3>${activity.activity}</h3>
+          <h5>${activity.type}</h5>`)
+
+          var speed = 45;
+          var delay = $('#activity h3').text().length * speed + speed;
+          typeEffect($('#activity h3'), speed);
+          setTimeout(function(){
+            $('h5').css('display', 'inline-block');
+            typeEffect($('#activity h5'), speed);
+          }, delay);
         })
+        .fail((err)=>{
+          console.log(localStorage.getItem('tokenjwt'));
+        })
+      }
+        
+      function expand() {
+        $(".search").toggleClass("close");
+        $(".input").toggleClass("square");
+        if ($('.search').hasClass('close')) {
+          $('input').focus();
+        } else {
+          $('input').blur();
+        }
+      }
+
+      function getPic() {
+        $.ajax({
+          type: "get",
+          url: "http://localhost:3000/randompic",
+          headers: {
+            tokenjwt: localStorage.getItem('tokenjwt')
+          }
+        })
+        .done((pictureUrl)=>{console.log(pictureUrl)})
         .fail((err)=>{err})
+
+      }
+
+      function getJoke() {
+      
+        $.ajax({
+          type: "get",
+          url: "http://localhost:3000/jokes",
+          headers: {
+            tokenjwt: localStorage.getItem('tokenjwt')
+          }
+        })
+        .done((joke)=>{console.log(joke)})
+        .fail((err)=>{err})
+      }
+
+      $('.search').on('click', expand)
+
+      $(document).ready( function() {
+        $(".m-modal").css("visibility", "hidden")
+        $('.btn.red').on('click', getAnim);
+        $('#new-anime').on('click', getAnim);
+
+        $('.btn.green').on('click', getBook);
+        $('#new-book').on('click', getBook);
+        
+        $('.btn-large.blue').on('click', getRandom);
+        $('#new-activity').on('click', getRandom);
       })
     </script>
   </body>
