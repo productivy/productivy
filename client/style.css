@@ -1,0 +1,423 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    padding-top: 65px;
+}
+
+.navbar {
+    background-color: #26a69a!important;
+}
+
+.navbar-right p {
+    float: right;
+    line-height: 50px;
+    color: white;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
+
+.row {
+    display: flex;
+
+}
+
+.row > div {
+    flex: 1;
+    /* border: 1px solid grey; */
+    margin-top:10px;
+}
+
+.row-body {
+    height: 100vw;
+}
+
+.row-body .box {
+    border-right: 1px solid #eee;
+}
+
+.row-body div:last-child {
+    border-right: none;
+}
+
+input.search {
+    margin-bottom: 10px;
+}
+
+/* Sections */
+
+a[m-open="one"] {
+    height:60px !important;
+    width: 60px;
+    margin-left:20%;
+    margin-top: 100px;
+}
+  
+a[m-open="two"] {
+    width:60px !important;
+    height:60px !important;
+    margin-left:20%;
+    margin-top: 400px;
+}
+  
+a[m-open="three"] {
+    margin-left:20%;
+    margin-top: 100px;
+}
+
+/* Title */
+
+.font-title {
+    margin-left: 40%;
+    line-height: 2.5em;
+    width: 50%;
+    height: 120px;
+    text-align: right;
+    transform: perspective(1000px) translateZ(1px);
+    transform-origin: 0% 0%;
+    transition: all 1s cubic-bezier(0.06, 0.63, 0, 1);
+    backface-visibility: hidden;
+}
+.title-big {
+    font-size: 4em;
+    text-decoration: underline;
+}
+
+.small {
+    font-size: 1.4em!important;
+}
+
+/* Anim */
+
+.anime-box {
+    border-radius: 3px;
+    position: relative;
+    margin: 8% auto auto auto;
+    width: 450px;
+    padding: 40px 50px;
+    display: table;
+    background-color: #fff;
+}
+.anime-box .anime-text {
+    text-align: center;
+    width: 450px;
+    height: auto;
+    clear: both;
+    font-weight: 500;
+    font-size: 1.75em;
+}
+.anime-box .anime-text i {
+    font-size: 1.0em;
+    margin-right: 0.4em;
+}
+.anime-box .anime-director {
+    width: 450px;
+    height: auto;
+    clear: both;
+    padding-top: 20px;
+    font-size: 1em;
+    text-align: right;
+}
+.anime-box .buttons {
+    width: 450px;
+    margin: auto;
+    display: block;
+}
+.anime-box .buttons .button#new-anime {
+    height: 38px;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    background-color: tomato;
+    outline: none;
+    /* font-size: 0.85em; */
+    padding: 8px 18px 6px 18px;
+    /* margin-top: 30px; */
+    opacity: 1;
+    cursor: pointer;
+}
+.anime-box .buttons .button:hover {
+    opacity: 0.9;
+}
+.anime-box .buttons .fa-star {
+    float: left;
+    text-align: center;
+    font-size: 2em;
+    margin-right: 5px;
+    width: 40px;
+}
+.anime-box .buttons .button#new-anime {
+    float: right;
+}
+
+.anime-box .anime-desc {
+    margin-bottom: 35px;
+}
+
+/* Book */
+
+.wrapper {
+	max-width: 400px;
+	margin: 50px auto;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.border-tlr-radius { 
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px; 
+}
+
+.text-center { text-align: center; }
+
+.radius { border-radius: 2px; }
+
+.padding-tb { padding-top: 1.6rem; padding-bottom: 1.6rem;}
+
+.shadowDepth0 { box-shadow: 0 1px 3px rgba(0,0,0, 0.12); }
+
+.shadowDepth1 {
+   box-shadow: 
+  		0 1px 3px rgba(0,0,0, 0.12),
+    	0 1px 2px rgba(0,0,0, 0.24);      
+}
+
+.card {
+	background-color: #fff;
+	margin-bottom: 1.6rem;
+}
+
+.card__padding {
+	padding: 1.6rem;
+}
+ 
+.card__image {
+	min-height: 100px;
+	background-color: #eee;
+}
+	.card__image img {
+		width: 100%;
+		max-width: 100%;
+		display: block;
+	}
+
+.card__content {
+	position: relative;
+}
+
+/* card article */
+.card__article a {
+	text-decoration: none;
+	color: #444;
+	transition: all 0.5s ease;
+}
+	.card__article a:hover {
+		color: #2980b9;
+	}
+
+/* card action */
+.card__action {
+	overflow: hidden;
+	padding-right: 1.6rem;
+	padding-left: 1.6rem;
+	padding-bottom: 1.6rem;
+}
+
+.card__author img,
+.card__author-content {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.card__author img{
+    border-radius: 50%;
+    margin-right: 0.6em;
+}
+
+.wrapper .button#new-book, .button#new-activity {
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    outline: none;
+    margin-top: 10px;
+    padding: 8px 18px 6px 18px;
+    opacity: 1;
+    cursor: pointer;
+}
+.wrapper .button#new-book {
+    background-color: #236d26;
+    height: 38px;
+}
+
+.button#new-activity {
+    background-color: #2d6ea2;
+    height: 50px;
+    font-size: 1.2em;
+    left: 47%;
+    top: 45%;
+    position: fixed;
+}
+/* Search */
+
+#content {
+    position: absolute;
+    height: 50px;
+    width: 300px;
+    margin-left: 170px;
+    top: 25%;
+    right: -15%;
+    transform: translate(-50%, -50%);
+    font-family: "Montserrat", sans-serif;
+}
+  
+#content.on {
+    -webkit-animation-name: in-out;
+    animation-name: in-out;
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    font-family: "Montserrat", sans-serif;
+}
+
+#content input {
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    border: 4px solid #FFFFFF;
+    border-radius: 50%;
+    background: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Roboto;
+    outline: 0;
+    -webkit-transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
+    transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
+    -webkit-transition-delay: 0.4s;
+    transition-delay: 0.4s;
+    -webkit-transform: translate(-100%, -50%);
+    -ms-transform: translate(-100%, -50%);
+    transform: translate(-100%, -50%);
+}
+
+#content .search {
+    background: none;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 100%;
+    outline: 0;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+    -webkit-transform: translate(-100%, -50%);
+    -ms-transform: translate(-100%, -50%);
+    transform: translate(-100%, -50%);
+}
+
+.search:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 4px;
+    background-color: #fff;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-top: 26px;
+    margin-left: 17px;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+}
+
+.close {
+    -webkit-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    -webkit-transition-delay: 0.4s;
+    transition-delay: 0.4s;
+}
+  
+.close:before {
+    content: "";
+    position: absolute;
+    width: 27px;
+    height: 4px;
+    margin-top: -1px;
+    margin-left: -13px;
+    background-color: #fff;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+}
+  
+.close:after {
+    content: "";
+    position: absolute;
+    width: 27px;
+    height: 4px;
+    background-color: #fff;
+    margin-top: -1px;
+    margin-left: -13px;
+    cursor: pointer;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+  
+.square {
+    box-sizing: border-box!important;
+    padding: 0 40px 0 10px!important;
+    width: 300px!important;
+    height: 50px!important;
+    border: 4px solid #FFFFFF!important;
+    border-radius: 0!important;
+    background: none!important;
+    color: #fff!important;
+    font-family: "Montserrat", sans-serif!important;
+    font-size: 16px!important;
+    font-weight: 400!important;
+    outline: 0!important;
+    -webkit-transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s!important;
+    transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s!important;
+    -webkit-transition-delay: 0.4s, 0s, 0.4s!important;
+    transition-delay: 0.4s, 0s, 0.4s!important;
+    -webkit-transform: translate(-100%, -50%)!important;
+    -ms-transform: translate(-100%, -50%)!important;
+    transform: translate(-100%, -50%)!important;
+}
+
+.activityBox h3 {
+    letter-spacing: 1pt;
+    margin-bottom: 15px;
+  }
+  
+.activityBox h5 {
+    text-transform: lowercase;
+    width: 50%;
+    display: none;
+}
+
+.activityBox {
+    margin: 5% auto;
+    text-align: center;
+    max-width: 1200px;
+    height: 200px;
+}
