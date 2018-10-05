@@ -66,3 +66,11 @@ $.ajax({
 })
 .done((activity)=>{activity})
 .fail((err)=>{err})
+
+
+$.ajax({
+    type: "get",
+    url: "http://localhost:3000/randompic",
+})
+.done((pictureUrl)=>{pictureUrl})
+.fail((err)=>{err})

@@ -11,5 +11,6 @@ router
     .post('/google-signin',googleAuth, googleSignUp)
 
     .get('/activity',boredController.getRandomActivity)
+    .get('/randompic',boredController.getRandomPic)
 
 module.exports = router;

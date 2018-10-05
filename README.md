@@ -1,5 +1,5 @@
 # [Productivy](https://github.com/productivy/productivy)
-!!! by Hana, Indira, Fathul
+>by Hana, Indira, Fathul
 
 # API Documentation
 
