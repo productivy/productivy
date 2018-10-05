@@ -1,56 +1,69 @@
-# [Productivy](https://github.com/productivy/productivy)
->by Hana, Indira, Fathul
+# [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [**Productivy APP**](https://github.com/productivy/productivy) 
 
-# API Documentation
+
+
+
+## API Documentation
 
 ## Overview
+>Reading app with basic REST API.
 This documentation covers the Task Management Service web API.
 
----
+
 #### Media Type support
     All server response bodies and request bodies MUST be valid JSON Media Type messages.
 
 ## URLs and Operations
----
-Below are the URLs and the operations associated with them.
+
+>Below are the URLs and the operations associated with them.
 
 
 #### User
-The User URL (/api/users/) is the base URL for creating, reading, updating, deleting User objects and supports the following operations:
+The User is the base token for reading objects and supports the following operations:
 
 ---
 ##### Authentication
 
 | Route | HTTP | Description | Input | Output |
 | ------ | ------ | ------ | ------ | ------ |
-| ````/api/signup```` | POST | Sign up with new user info | [username], [password], [email], [role] | User List
-| ````/api/signin```` | POST | Sign in while get an access token based on credentials | [username], [password] | User List
+| ````/google-signin```` | POST | Sign in while get an access token based on credentials | [username], [password] | User
 
 ---
-##### CRUD User
+##### Reading
 
 | Route | HTTP | Description | Input | Output |
 | ------ | ------ | ------ | ------ | ------ |
-| ````/api/users```` | GET | Get all the users info (admin only) | none | User List
-| ````/api/users/:id```` | GET | Get a single user info (admin and authenticated user) |  [id] [searched_parameter] | User List
-| ````/api/users```` | POST | Create a user (admin only) | [username], [password], [email], [role] | User List
-| ````/api/users/:id```` | DELETE | Delete a user (admin only) | [id] | none
-| ````/api/users/:id```` | PUT | Update a user with new info (admin and authenticated user) | [id] [updated_parameter] | User List
+| ````/anim```` | GET | Get random Ghibly movie including description, director, rating etc.  | none | Movie Detail
+| ````/activity```` | GET | Get a single recomended activity to do  |  none | Activity list
+| ````/randompic```` | GET | Get single random picture | none | Image
+| ````/jokes```` | GET | Get single random joke, may contain dry humor | none | Joke String
+| ````/books```` | GET | Get random recomended book include book detail | none | Book Object
+___
 
-User List is shown below
 
-#### User List
-````
-{
-  "user" : [
-    {
-      "id" : "1",
-      "username" : "alice",
-      "password" : "a1!c#",
-      "email" : "allice@mail.co",
-      "dateCreated" : "2016-01-18T02:12:55.747Z",
-      "dateUpdated" : "2016-01-18T03:26:36.572Z"
-    }
-  ]
-}
-````
+## Usage
+#### With only npm:
+```
+npm install
+npm start
+npm run dev
+```
+
+## Built With
+1. axios
+2.    cors
+3.    dotenv
+4.    express
+5.    generate-password
+6.    google-auth-library
+7.    jsonwebtoken
+8.    mongoose
+
+## Authors
+1. Hana
+2. Indira
+3. Fathul
+
+
+
+Acces the website via http://localhost:3000 or via heroku http://productivy.heroku.com 

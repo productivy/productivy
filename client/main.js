@@ -188,8 +188,6 @@ $.ajax({
 })
 .done((pictureUrl)=>{pictureUrl})
 .fail((err)=>{err})
-<<<<<<< HEAD
-=======
 
 $.ajax({
     type: "get",
@@ -197,4 +195,3 @@ $.ajax({
 })
 .done((joke)=>{joke})
 .fail((err)=>{err})
->>>>>>> add randomjokes

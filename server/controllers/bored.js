@@ -18,14 +18,8 @@ module.exports = {
     
     getRandomPic : (req,res)=>{
 
-        
-        var unsplash = require('unsplash-source-node')
-        var myUnsplash = new unsplash({random : true})
-        myUnsplash.width = 600
-        myUnsplash.height = 600
-        var url = myUnsplash.get()
 
-        res.status(200).json({data : url})
+        res.status(200).json({imgUrl : 'https://picsum.photos/300/300/?random'})
 
 
     },
