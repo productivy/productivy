@@ -15,6 +15,7 @@ router
 
     .get('/activity',boredController.getRandomActivity)
     .get('/randompic',boredController.getRandomPic)
+    .get('/jokes',boredController.getRandomJokes)
 
     .get('/books', getBook)
 
