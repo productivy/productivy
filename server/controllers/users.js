@@ -37,6 +37,7 @@ module.exports = {
                     id: data._id
                   }, process.env.AccKey,
                     function (err, token) {
+
                       res.status(200).json({
                         name: data.name,
                         token: token

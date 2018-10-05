@@ -51,8 +51,8 @@ alertify.defaults = {
 }
 
 
-let tokenjwt = localStorage.getItem('tokenjwt')
-if(tokenjwt) {
+// let tokenjwt = localStorage.getItem('tokenjwt')
+if(localStorage.getItem('tokenjwt')) {
     $('.g-signin2').hide()
     $('#logbtn').show()
 } else {
@@ -174,24 +174,18 @@ if(tokenjwt) {
     }
   })(jQuery)
 
-$.ajax({
-    type: "get",
-    url: "http://localhost:3000/activity",
-})
-.done((activity)=>{activity})
-.fail((err)=>{err})
-
-
-$.ajax({
-    type: "get",
-    url: "http://localhost:3000/randompic",
-})
-.done((pictureUrl)=>{pictureUrl})
-.fail((err)=>{err})
-
-$.ajax({
-    type: "get",
-    url: "http://localhost:3000/jokes",
-})
-.done((joke)=>{joke})
-.fail((err)=>{err})
+function typeEffect(element, speed) {
+  var text = $(element).text();
+  $(element).html('');
+  
+  var i = 0;
+  var timer = setInterval(function() {
+          if (i < text.length) {
+            $(element).append(text.charAt(i));
+            i++;
+          } else {
+            clearInterval(timer);
+          }
+        }, speed);
+}
+  

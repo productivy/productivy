@@ -11,12 +11,14 @@ router
 
     .post('/google-signin',googleAuth, googleSignUp)
 
-    .get('/anim', AnimController.showAllFilm)
+    .get('/anim', isLogin, AnimController.showAllFilm)
 
-    .get('/activity',boredController.getRandomActivity)
-    .get('/randompic',boredController.getRandomPic)
-    .get('/jokes',boredController.getRandomJokes)
+    .get('/randompic', isLogin, boredController.getRandomPic)
 
-    .get('/books', getBook)
+    .get('/jokes', isLogin, boredController.getRandomJokes)
+
+    .get('/activity', isLogin, boredController.getRandomActivity)
+
+    .get('/books', isLogin, getBook)
 
 module.exports = router;
