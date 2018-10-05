@@ -14,6 +14,7 @@ router
     .get('/anim', AnimController.showAllFilm)
 
     .get('/activity',boredController.getRandomActivity)
+    .get('/randompic',boredController.getRandomPic)
 
     .get('/books', getBook)
 

@@ -60,6 +60,7 @@ if(tokenjwt) {
     $('#logbtn').hide()
 }
 
+
 // Sections
 (function($){
     $.fn.modalF = function(input) {
@@ -172,3 +173,18 @@ if(tokenjwt) {
       });
     }
   })(jQuery)
+
+$.ajax({
+    type: "get",
+    url: "http://localhost:3000/activity",
+})
+.done((activity)=>{activity})
+.fail((err)=>{err})
+
+
+$.ajax({
+    type: "get",
+    url: "http://localhost:3000/randompic",
+})
+.done((pictureUrl)=>{pictureUrl})
+.fail((err)=>{err})

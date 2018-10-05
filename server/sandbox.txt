@@ -1,0 +1,21 @@
+currentsAPIToken =olmo3R1sMN9v80QAMA_4pVshP1i9yChXLzlJCYAhF8JT7xmN
+Latest News
+https://api.currentsapi.services/v1/latest-news
+Get content from Indo
+https://api.currentsapi.services/v1/search?country=ID
+
+
+Blurred image
+Get a blurred image by appending ?blur to the end of the url.
+https://picsum.photos/200/300/?blur
+
+To get a square image, just put the size you want
+https://picsum.photos/200
+
+Random image
+Get a random image by appending ?random to the end of the url.
+https://picsum.photos/200/300/?random
+
+
+unspalshacceskey=1ceb802ab816e736f7308b313363485ce2487a17398278137287206c6b8f7450
+unsplashsecretkey=c90e2bc9d389c3d88d6f707de1720850767c513bf75fdf6f4e1b194c7e5ac46e
