@@ -28,7 +28,21 @@ module.exports = {
         res.status(200).json({data : url})
 
 
-    }
+    },
+
+    getRandomJokes : (req,res)=>{
+
+        axios({
+            method:'get',
+            url: 'https://geek-jokes.sameerkumar.website/api',
+        })
+        .then((result) => {
+            res.status(200).json({data : result})
+            
+        }).catch((err) => {
+            res.status(400).json({message : 'eror kak'})
+        });    
+    },
     
 
 

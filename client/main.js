@@ -188,3 +188,13 @@ $.ajax({
 })
 .done((pictureUrl)=>{pictureUrl})
 .fail((err)=>{err})
+<<<<<<< HEAD
+=======
+
+$.ajax({
+    type: "get",
+    url: "http://localhost:3000/jokes",
+})
+.done((joke)=>{joke})
+.fail((err)=>{err})
+>>>>>>> add randomjokes
