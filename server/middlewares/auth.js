@@ -10,7 +10,7 @@ const User = require('../models/users'),
 module.exports = {
   isLogin: function(req, res, next) {
     let token = req.headers.tokenjwt
-    console.log('masuk middlewares/isLogin', token)
+    console.log('masuk middlewares/isLogin')
     if (token) {
       jwt.verify(token, process.env.AccKey, function(err, decoded) {
         if (!err) {
@@ -36,8 +36,8 @@ module.exports = {
   },
 
   googleAuth (req,res,next) {
-    console.log('masuk middleware/googleAuth')
     let googleToken = req.body.googleToken
+    console.log('masuk middleware/googleAuth', googleToken)
     let ticket = new Promise(function(resolve, reject) {
       client.verifyIdToken({
         idToken: googleToken,

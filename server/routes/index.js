@@ -11,10 +11,10 @@ router
 
     .post('/google-signin',googleAuth, googleSignUp)
 
-    .get('/anim', AnimController.showAllFilm)
+    .get('/anim', isLogin, AnimController.showAllFilm)
 
-    .get('/activity',boredController.getRandomActivity)
+    .get('/activity', isLogin, boredController.getRandomActivity)
 
-    .get('/books', getBook)
+    .get('/books', isLogin, getBook)
 
 module.exports = router;
