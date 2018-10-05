@@ -240,7 +240,7 @@
         }
       }
 
-      function getJoke() {
+      function getPic() {
         $.ajax({
           type: "get",
           url: "http://localhost:3000/randompic",
@@ -248,7 +248,7 @@
             tokenjwt: localStorage.getItem('tokenjwt')
           }
         })
-        .done((pictureUrl)=>{pictureUrl})
+        .done((pictureUrl)=>{console.log(pictureUrl)})
         .fail((err)=>{err})
 
       }
@@ -262,7 +262,7 @@
             tokenjwt: localStorage.getItem('tokenjwt')
           }
         })
-        .done((joke)=>{joke})
+        .done((joke)=>{console.log(joke)})
         .fail((err)=>{err})
       }
 
